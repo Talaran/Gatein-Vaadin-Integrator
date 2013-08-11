@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>Gatein-Vaadin-Integrator</artifactId>
+    <groupId>org.tal</groupId>
+    <version>1.0</version>
+  </parent>
+
+  <groupId>org.tal</groupId>
+  <artifactId>Gatein-Vaadin-Integrator-ear</artifactId>
+  <version>1.0</version>
+  <packaging>ear</packaging>
+
+  <name>Basic Extension - EAR</name>
+  <url>http://www.gatein.org</url>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+            <version>5</version>
+            <defaultLibBundleDir>lib</defaultLibBundleDir>
+            <modules>
+              <webModule>
+                 <groupId>org.tal</groupId>
+                 <artifactId>Gatein-Vaadin-Integrator-war</artifactId>
+                 <contextRoot>Gatein-Vaadin-Integrator</contextRoot>
+                 <bundleFileName>Gatein-Vaadin-Integrator.war</bundleFileName>
+              </webModule>
+            </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+    <dependency>
+  	  <groupId>org.tal</groupId>
+  	  <artifactId>Gatein-Vaadin-Integrator-configuration</artifactId>
+  	  <version>1.0</version>
+  	</dependency>
+      <dependency>
+          <groupId>org.tal</groupId>
+          <artifactId>Gatein-Vaadin-Integrator-jar</artifactId>
+          <version>1.0</version>
+      </dependency>
+    <dependency>
+      <groupId>org.tal</groupId>
+      <artifactId>Gatein-Vaadin-Integrator-war</artifactId>
+      <version>1.0</version>
+      <type>war</type>
+    </dependency>
+  </dependencies>
+
+</project>

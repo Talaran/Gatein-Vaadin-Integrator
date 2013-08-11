@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<conf>
+    <org>
+        <tal>
+            <gatein>
+                <vaadin>
+                    <integrator>
+                        <integrationMode>servlet</integrationMode>
+                    </integrator>
+                </vaadin>
+            </gatein>
+        </tal>
+    </org>
+</conf>
