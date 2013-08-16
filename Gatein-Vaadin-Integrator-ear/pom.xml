@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
     <artifactId>Gatein-Vaadin-Integrator</artifactId>
     <groupId>org.tal</groupId>
     <version>1.0</version>
   </parent>
 
-  <groupId>org.tal</groupId>
   <artifactId>Gatein-Vaadin-Integrator-ear</artifactId>
   <version>1.0</version>
   <packaging>ear</packaging>
 
-  <name>Basic Extension - EAR</name>
-  <url>http://www.gatein.org</url>
 
-  <build>
+    <dependencies>
+        <dependency>
+            <groupId>org.tal</groupId>
+            <artifactId>Gatein-Vaadin-Integrator-configuration</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tal</groupId>
+            <artifactId>Gatein-Vaadin-Integrator-war</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -34,26 +46,25 @@
             </modules>
         </configuration>
       </plugin>
+        <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>copy</id>
+                    <phase>install</phase>
+                    <configuration>
+                        <tasks>
+                            <copy file="/home/samuel/IT/code/Gatein-Vaadin-Integrator/Gatein-Vaadin-Integrator-ear/target/Gatein-Vaadin-Integrator-ear-1.0.ear"
+                                  tofile="/home/samuel/IT/GateIn-3.6.0.Final-jbossas7/gatein/extensions/Gatein-Vaadin-Integrator-ear-1.0.ear"/>
+                        </tasks>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
   </build>
-  
-  <dependencies>
-    <dependency>
-  	  <groupId>org.tal</groupId>
-  	  <artifactId>Gatein-Vaadin-Integrator-configuration</artifactId>
-  	  <version>1.0</version>
-  	</dependency>
-      <dependency>
-          <groupId>org.tal</groupId>
-          <artifactId>Gatein-Vaadin-Integrator-jar</artifactId>
-          <version>1.0</version>
-      </dependency>
-    <dependency>
-      <groupId>org.tal</groupId>
-      <artifactId>Gatein-Vaadin-Integrator-war</artifactId>
-      <version>1.0</version>
-      <type>war</type>
-    </dependency>
-  </dependencies>
 
 </project>

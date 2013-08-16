@@ -7,17 +7,9 @@
     <version>1.0</version>
   </parent>
 
-  <groupId>org.tal</groupId>
   <artifactId>Gatein-Vaadin-Integrator-configuration</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
-
-  <name>Basic Extension - Configuration</name>
-  <url>http://www.gatein.org</url>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
   <dependencies>
     <dependency>

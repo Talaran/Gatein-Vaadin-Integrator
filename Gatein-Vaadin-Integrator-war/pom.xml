@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -7,31 +7,27 @@
         <groupId>org.tal</groupId>
         <version>1.0</version>
     </parent>
-    <groupId>org.tal</groupId>
+
     <artifactId>Gatein-Vaadin-Integrator-war</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
 
-    <name>Basic Extension - WAR</name>
-    <url>http://www.gatein.org</url>
-
-    <build>
-        <finalName>Gatein-Vaadin-Integrator</finalName>
-    </build>
-
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.tal</groupId>
             <artifactId>Gatein-Vaadin-Integrator-jar</artifactId>
             <version>1.0</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
         </dependency>
     </dependencies>
 </project>
